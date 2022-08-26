@@ -9,7 +9,7 @@ expect()is a playwright function used for assertion eg await expect('mylocator')
 package.json is the profile settings for the project, with Autor name, scripts and dependencies and its versions.
 Once this repo is pulled (from https://github.com/Ayobamee/playwrightBeginner)run 'npm install' on terminal/command prompt, this installs all the dependencies locally for this project.
 playwright.config.js is the main configuration file for playwright, you can set number of retries for a test, how many workers you want your test to run on, browser type to run on , specify if you want you test to run in headless more or headed , you can enable screenshots , specify reporters and traces.
-For more info about playwright visit https://playwright.dev.
+For more info about playwright please visit https://playwright.dev.
 You can also visit https://github.com/Ayobamee/Letsdeel to see an advanced framework i wrote with Playwright using P.O.M which has functions for actions and assertions.
 
 Author: Ayobami Elutade ©2022.

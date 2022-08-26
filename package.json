@@ -12,7 +12,7 @@
     "record": "npx playwright codegen 'weburl"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayobami",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.21.1",

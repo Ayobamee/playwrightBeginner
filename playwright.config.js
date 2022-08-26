@@ -14,7 +14,7 @@
 const config = {
   testDir: './tests',
   retries: 1,
-  workers: 2,
+  workers: 1,
   /* Maximum time one test can run for. */
   timeout: 50 * 1000,
   expect: {

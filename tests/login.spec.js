@@ -1,18 +1,28 @@
 
 const { test, expect } = require('@playwright/test');
 
-test('homepage has Playwright in title and get started link linking to the intro page', async ({ page }) => {
+test('User cannot login to instagram using incorrect details', async ({ page }) => {
     await page.goto('https://www.instagram.com');
 
     // create a username locator
     const usernameField = page.locator('[aria-label="Phone number\, username\, or email"]');
 
-    //   // Expect an attribute "to be strictly equal" to the value.
-    //   await expect(getStarted).toHaveAttribute('href', '/docs/intro');
+    // create a password locator
+    const passwordField = page.locator('[aria-label="Password"]');
+    // create the login button locator
+    const loginBtn = page.locator('button:has-text("Log In") >> nth=0')
+    // create error message locator
+    const errorMsg = page.locator('[data-testid="login-error-message"]')
 
-    // Click the get started link.
+    // Enter username.
     await usernameField.type('username');
 
-    //   // Expects the URL to contain intro.
-    //   await expect(page).toHaveURL(/.*intro/);
+    //Enter password.
+    await passwordField.type('password')
+
+    //Click login
+    await loginBtn.click()
+
+    await expect(errorMsg).toBeVisible()
+
 });

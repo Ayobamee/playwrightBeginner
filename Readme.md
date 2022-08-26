@@ -1,8 +1,12 @@
-The pageobjects folders contains folders that captures all D.O.M elements with the functions for each actions to be performed. For example, the LoginPage has all the D.O.M for logging in and also a function that performs the login action.
-The POManager has all the imports for the different pageobjects, which also contains functions that can be accessed in the spec.js file.
-The utils folder has two files, one with the function for generating random characters and also the test data ie username and password for the test.
-The spec.js filles under the test folder has all the tests to be performed. There are imports from the POManager and also instances of classes for each test to be performed. The beforeeach test block contains steps to login to the app and its assertions also.
-The package.json file has the different configs for the running the test eg 'npm run regression' will run the spec.js in headful mode on the webkit ie safari browser.
-The allure-results folder has the reports for the tests run.
-The two tests ie Fixedcontract and Payasyougo contract creation are running in parallel, i configured 2 workers in the congig.js file to make this happen. 
-The project was committed to the main branch on the project directory on github.
+const { test, expect } = require('@playwright/test') - imports the test and assertion libraries for playwright.
+Tests are written in the test block.
+Be sure to preceed all playwright functions with the await keyword, this is because playwright uses the async concept ie executes lines of code simultenously, the await keyword waits till promise is resolved which means the 2nd line of code executes after the first line of code.
+ page.goto() is a playwright function used to visit a page.
+ page.locator() is a playwright function used to write a locator for a D.O.M element.
+The page.locator function chained with .type() method is used to perform a type action eg await page.locator('mylocator').type('myname').
+The page.locator function chained with .click() method is used to perform a click action eg  page.locator('myclicklocator').click().
+ expect()is a playwright used for assertion eg await expect('mylocator).isVisible(), this asserts that mylocator is visible.
+For more info about playwright visit https://playwright.dev.
+You can also visit https://github.com/Ayobamee/Letsdeel to see an advanced framework i wrote with Playwright using P.O.M which has functions for actions and assertions.
+
+Author: Ayobami Elutade ©2022.
